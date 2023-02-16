@@ -1,0 +1,32 @@
+[
+  {
+    "FlowId": "549d4dbc-d2e5-4352-9591-0d208b99c427",
+    "FlowName": "SimNaCarrinhoGenericos",
+    "MasterState": "testeapigrowth@msging.net",
+    "FlowStates": [
+      {
+        "FlowStateId": "9adb10ce-dd24-4659-96c9-fd3c7d520902",
+        "FlowStateName": "Bloco 1"
+      },
+      {
+        "FlowStateId": "9adb10ce-dd24-4659-96c9-fd3c7d520903",
+        "FlowStateName": "Bloco 2"
+      }
+    ]
+  },
+  {
+    "FlowId": "549d4dbc-d2e5-4352-9591-0d208b99c597",
+    "FlowName": "Teste",
+    "MasterState": "testeapigrowth@msging.net",
+    "FlowStates": [
+      {
+        "FlowStateId": "9adb10ce-dd24-4659-96c9-fd3c7d520904",
+        "FlowStateName": "Bloco 3"
+      },
+      {
+        "FlowStateId": "9adb10ce-dd24-4659-96c9-fd3c7d520905",
+        "FlowStateName": "Bloco 4"
+      }
+    ]
+  }
+]

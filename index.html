@@ -1,263 +1,130 @@
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 
- 
-
 <head>
-
     <meta charset="utf-8" />
-
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
- 
 
     <title>Whatsapp Component - XP Inc</title>
 
- 
-
     <link rel="icon" href="images/icon.jpg" />
 
- 
-
     <link href="images/icon.jpg" rel="icon" />
-
     <link href="css/bootstrap.css" rel="stylesheet" />
-
     <link href="css/styles.css" rel="stylesheet" />
 
- 
-
-    <link href=https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css rel="stylesheet">
-
-    <link href=https://fonts.googleapis.com/css?family=Roboto|Staatliches&display=swap rel="stylesheet">
-
- 
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Staatliches&display=swap" rel="stylesheet">
 
     <script data-main="js/main.js" type="text/javascript" src="js/require.js"></script>
-
     <script type="text/javascript" src="js/jquery.min.js"></script>
-
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
 </head>
 
- 
-
 <body>
-
     <div class="main" style="background-image: url('images/default.jpg')">
 
- 
-
         <div class="container">
-
             <h1 class="logo cursive">
-
                 Enviar notificação Whatsapp
-
             </h1>
 
- 
-
             <div class="form-group" style="display: flex; justify-content: flex-end;">
-
                 <select id="brand" class="custom-select select-brand" required="required">
-
                     <option value="" selected>Selecione a marca</option>
-
                     <option value="3">XP</option>
-
                     <option value="386">Rico</option>
-
                     <option value="308">Clear</option>
-
                 </select>
-
             </div>
-
- 
 
             <div class="jumbotron bg-white shadow">
-
                 <div style="display: none; justify-content: center" id="loading">
-
                     <em class="fa fa-spinner fa-spin fa-5x"></em>
-
                 </div>
-
                 <div style="display: flex" id="form" class="row">
-
                     <div class="d-flex align-self-center text-center justify-content-center col-md-6">
-
                         <img id="logo" class="img-fluid w-50 rounded" alt="Brand logo" src="images/whatsapp.png" />
-
                     </div>
-
                     <div class="col-md-6">
-
                         <div class="form-group">
-
                             <input type="hidden" id="journeyCode">
-
                         </div>
 
- 
-
                         <div class="form-group">
-
                             <select id="whatsappAccount" class="custom-select" required="required">
-
                                 <option value="" selected>Conta de envio</option>
-
                             </select>
-
                             <small style="display: none" class="text-danger">Campo deve ser preenchido corretamente</small>
-
                         </div>
 
- 
-
                         <div class="form-group">
-
                             <input type="text" id="templateName" class="form-control" required="required" placeholder="Nome do template">
-
                             <small style="display: none" class="text-danger">Campo deve ser preenchido corretamente</small>
-
                         </div>
 
- 
-
                         <div class="form-group">
-
                             <input type="text" id="phoneFieldName" class="form-control" required="required" placeholder="Campo do telefone">
-
                             <small style="display: none" class="text-danger">Campo deve ser preenchido corretamente</small>
-
                         </div>
 
- 
-
                         <div class="form-group">
-
                             <input type="text" id="templateVariables" class="form-control" required="required" placeholder="Váriaveis do template">
-
                             <small style="display: none" class="text-danger">Campo deve ser preenchido corretamente</small>
-
                         </div>
 
- 
-
                         <div class="form-group">
-
                             <input type="text" id="extraVariables" class="form-control" required="required" placeholder="Váriaveis extras">
-
                             <small style="display: none" class="text-danger">Campo deve ser preenchido corretamente</small>
-
                         </div>
 
- 
-
                         <div class="form-group">
-
                             <input type="text" id="botRedirect" class="form-control" required="required" placeholder="Bot de redirecionamento" />
-
                             <!--<select id="botRedirect" class="custom-select" required="required">
-
                                 <option value="" selected>Bot de redirecionamento</option>
-
                             </select>-->
-
                             <small style="display: none" class="text-danger">Campo deve ser preenchido corretamente</small>
-
                         </div>
 
- 
-
                         <div class="form-group">
-
                             <input type="text" id="botRedirectBlock" class="form-control" required="required" placeholder="Bloco de redirecionamento" />
-
                             <!--<select id="botRedirectBlock" class="custom-select disabled" disabled required="required">
-
                                 <option value="" selected>Bloco de redirecionamento</option>
-
                             </select>-->
-
                             <small style="display: none" class="text-danger">Campo deve ser preenchido corretamente</small>
-
                         </div>
-
- 
 
                         <div class="form-group">
-
                             <input type="text" id="masterState" class="form-control" required="required" placeholder="Master State" />
-
                             <!--<select id="botRedirectBlock" class="custom-select disabled" disabled required="required">
-
                                 <option value="" selected>Bloco de redirecionamento</option>
-
                             </select>-->
-
                             <small style="display: none" class="text-danger">Campo deve ser preenchido corretamente</small>
-
                         </div>
-
- 
 
                         <div class="form-row" style="margin-left: auto">
-
                             <button id="btnEnable" style="display: block" type="button" disabled class="col-md-6 disabled form-control btn btn-primary">
-
                                 Ativar
-
                             </button>
-
                             <button id="btnDisable" style="display: none" type="button" class="col-md-6 form-control btn btn-danger">
-
                                 Desativar
-
                             </button>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
- 
 
         <div class="footer">
-
             Made with
-
             <em class="fa fa-coffee coffee"></em> by
-
             <a target="_blank"
-
                href="#">
-
                 Audience Enabling
-
             </a>
-
         </div>
-
     </div>
-
 </body>
 
- 
-
 </html>
-
- 
-
- 
