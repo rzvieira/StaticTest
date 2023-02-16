@@ -291,10 +291,12 @@ define(function (require) {
                 "whatsappAccount": whatsappAccount, 
                 "templateName": templateName,
                 "contactNumber": `{{Event.${eventDefinitionKey}.\"${phoneFieldName}\"}}`,
+                "phoneFieldName": phoneFieldName,
                 "templateVariables": templateVarablesObj,
                 "extraVariables": extraVariablesObj,
                 "botRedirect": botRedirect,
                 "botRedirectBlock": botRedirectBlock,
+                "masterState": masterState,
                 "tokens": authTokens,
                 "contactIdentifier": "{{Contact.Key}}"            }];
             payload['metaData'].isConfigured = true;
