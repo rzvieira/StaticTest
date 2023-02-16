@@ -190,7 +190,7 @@ define(function (require) {
         botRedirect = inArguments.botRedirect;
         botRedirectBlock = inArguments.botRedirectBlock;
         masterState = inArguments.masterState;
-        if (brandId && whatsappAccount && templateName && phoneFieldName && templateVariables && botRedirect && botRedirectBlock && masterState) {
+        if (brand && whatsappAccount && templateName && phoneFieldName && templateVariables && botRedirect && botRedirectBlock && masterState) {
             $("#brand").val(brand);
             $("#whatsappAccount").val(whatsappAccount);
             $("#templateName").val(templateName);
