@@ -34,7 +34,8 @@ define(function (require) {
     async function loadCustomActivity() {
         loading(true);
 
-        let url = "/api/V1/WhatsappCustomActivity/get-custom-activity";
+        // let url = "/api/V1/WhatsappCustomActivity/get-custom-activity";
+        let url = "";
 
         customActivity = await fetch(url).then(response => response.json());
     }
