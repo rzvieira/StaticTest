@@ -178,11 +178,7 @@ define(function (require) {
                     payload["arguments"].execute.inArguments.length > 0);
                 var inArguments = hasInArguments ? payload["arguments"].execute.inArguments[0]
                     : {};
-                if (!hasInArguments) {
-                    payload.arguments = {};
-                    payload.arguments.execute = {};
-                    payload.arguments.execute.inArguments = [];
-                }
+              
                 brand = inArguments.brand;
                 whatsappAccount = inArguments.whatsappAccount;
                 templateName = inArguments.templateName;
