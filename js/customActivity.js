@@ -148,7 +148,13 @@ define(function (require) {
         formIsValid();
     }
     function formIsValid() {
-        var isValid = $("#whatsappAccount").val() !== ''            && $("#templateName").val() !== ''            && $("#phoneFieldName").val() !== ''            && $("#templateVariables").val() !== ''            && $("#botRedirect").val() !== ''            && $("#botRedirectBlock").val() !== ''            && $("#masterState").val() !== '';
+        var isValid = $("#whatsappAccount").val() !== ''            
+        && $("#templateName").val() !== ''            
+        && $("#phoneFieldName").val() !== ''            
+        && $("#templateVariables").val() !== ''            
+        && $("#botRedirect").val() !== ''            
+        && $("#botRedirectBlock").val() !== ''           
+        && $("#masterState").val() !== '';
         document.getElementById('btnEnable').disabled = !isValid;
         if (isValid) {
             $('#btnEnable').removeClass("disabled");
@@ -159,16 +165,16 @@ define(function (require) {
         return isValid;
     }
     function initialize(data) {
-        connection.trigger('ready');
-        connection.trigger('requestTokens');
-        connection.trigger('requestEndpoints');
-        connection.trigger('requestInteraction');
+      
         if (data) {
             payload = data;
         }
         var hasInArguments = Boolean(
-            payload["arguments"] &&            payload["arguments"].execute &&            payload["arguments"].execute.inArguments &&            payload["arguments"].execute.inArguments.length > 0        );
-        var inArguments = hasInArguments            ? payload["arguments"].execute.inArguments[0]
+            payload["arguments"] &&            
+            payload["arguments"].execute &&            
+            payload["arguments"].execute.inArguments &&            
+            payload["arguments"].execute.inArguments.length > 0);
+        var inArguments = hasInArguments ? payload["arguments"].execute.inArguments[0]
             : {};
         if (!hasInArguments) {
             payload.arguments = {};
@@ -199,6 +205,11 @@ define(function (require) {
         }
     }
     function onRender() {
+        connection.trigger('ready');
+        connection.trigger('requestTokens');
+        connection.trigger('requestEndpoints');
+        connection.trigger('requestInteraction');
+
         $("#brand").on("change", brandChange);
         $("#whatsappAccount").on("change", whatsappAccountChange);
         $("#templateName").on("change", templateNameChange);
