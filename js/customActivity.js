@@ -166,7 +166,10 @@ define(function (require) {
         return isValid;
     }
     function initialize(data) {
-      
+        loadCustomActivity()
+            .then(() => loading(false));
+
+
         if (data) {
             payload = data;
         }
@@ -248,8 +251,8 @@ define(function (require) {
             $("#btnEnable").attr("disabled", true);
             $('#btnEnable').addClass("disabled");
         });
-        loadCustomActivity()
-            .then(() => loading(false));
+        // loadCustomActivity()
+        //     .then(() => loading(false));
         lockForm();
     }
     function onGetTokens(tokens) {
