@@ -39,7 +39,7 @@ define(function (require) {
 
         //customActivity = await fetch(url).then(response => response.json());
 
-        customActivity = await fetch('./accounts.json').then(response => response.json());
+        customActivity = fetch('./accounts.json').then(response => response.json());
     }
 
     function loading(isLoading) {
