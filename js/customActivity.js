@@ -191,17 +191,19 @@ define(function (require) {
         botRedirectBlock = inArguments.botRedirectBlock;
         masterState = inArguments.masterState;
         if (brand && whatsappAccount && templateName && phoneFieldName && templateVariables && botRedirect && botRedirectBlock && masterState) {
-            $("#brand").val(brand);
-            $("#whatsappAccount").val(whatsappAccount);
-            $("#templateName").val(templateName);
-            $("#phoneFieldName").val(phoneFieldName);
-            $("#templateVariables").val(templateVariables);
-            $("#extraVariables").val(extraVariables);
-            $("#botRedirect").val(botRedirect);
-            $("#botRedirectBlock").val(botRedirectBlock);
-            $("#masterState").val(masterState);
-            $("#btnEnable").hide();
-            $("#btnDisable").show();
+            $("#brand").val(brand).trigger("change");
+            setTimeout(() => {
+                $("#whatsappAccount").val(whatsappAccount);
+                $("#templateName").val(templateName);
+                $("#phoneFieldName").val(phoneFieldName);
+                $("#templateVariables").val(templateVariables);
+                $("#extraVariables").val(extraVariables);
+                $("#botRedirect").val(botRedirect);
+                $("#botRedirectBlock").val(botRedirectBlock);
+                $("#masterState").val(masterState);
+                $("#btnEnable").hide();
+                $("#btnDisable").show();
+            }, 1000);
         }
     }
     function onRender() {
