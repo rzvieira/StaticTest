@@ -29,7 +29,7 @@ define(function (require) {
 		customActivity = await fetch('./accounts.json')
             .then(response => {
                 console.log(response);
-                console.log('Version', 1);
+                console.log('Version', 2);
                 if(!response.ok)
                     throw new Error('Reponse not ok'); 
                 
@@ -187,7 +187,9 @@ define(function (require) {
         templateName = inArguments.templateName;
         phoneFieldName = inArguments.phoneFieldName;
         templateVariables = inArguments.templateVariables;
+        templateVariablesField = inArguments.templateVariablesField;
         extraVariables = inArguments.extraVariables;
+        extraVariablesField = inArguments.extraVariablesField;
         botRedirect = inArguments.botRedirect;
         botRedirectBlock = inArguments.botRedirectBlock;
         masterState = inArguments.masterState;
@@ -293,7 +295,9 @@ define(function (require) {
                 "templateName": templateName,
                 "contactNumber": `{{Event.${eventDefinitionKey}.\"${phoneFieldName}\"}}`,
                 "phoneFieldName": phoneFieldName,
+                "templateVariablesField": templateVariables,
                 "templateVariables": templateVarablesObj,
+                "extraVariablesField": extraVariablesField,
                 "extraVariables": extraVariablesObj,
                 "botRedirect": botRedirect,
                 "botRedirectBlock": botRedirectBlock,
