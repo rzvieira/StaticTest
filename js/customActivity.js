@@ -96,6 +96,8 @@ define(function (require) {
 
         console.log('brand: ' +  brand);    
 
+        console.log('customActivity', customActivity);
+
         if (brand != "") {
             let custom = customActivity.filter(f => f.brandId == brand)[0];
 
@@ -141,8 +143,6 @@ define(function (require) {
 
     function brandChange(evt) {
         let value = $(evt.currentTarget).val();
-
-        console.log('value',value);
 
         loadAccountSelector(value);
 
