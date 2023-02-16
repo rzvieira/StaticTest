@@ -40,9 +40,13 @@ define(function (require) {
         //customActivity = await fetch(url).then(response => response.json());
 
         customActivity = await fetch('./accounts.json')
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.log(error));
+            .then(response => {
+                console.log(response);
+                if(!response.ok)
+                    throw new Error('Reponse not ok'); 
+                
+                return response.json()
+            });
     }
 
     function loading(isLoading) {
