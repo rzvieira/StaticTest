@@ -29,7 +29,7 @@ define(function (require) {
 		customActivity = await fetch('./accounts.json')
             .then(response => {
                 console.log(response);
-                console.log('Version', 2);
+                console.log('Version', 3);
                 if(!response.ok)
                     throw new Error('Reponse not ok'); 
                 
@@ -297,7 +297,7 @@ define(function (require) {
                 "phoneFieldName": phoneFieldName,
                 "templateVariablesField": templateVariables,
                 "templateVariables": templateVarablesObj,
-                "extraVariablesField": extraVariablesField,
+                "extraVariablesField": extraVariables,
                 "extraVariables": extraVariablesObj,
                 "botRedirect": botRedirect,
                 "botRedirectBlock": botRedirectBlock,
