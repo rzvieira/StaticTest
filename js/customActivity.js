@@ -29,7 +29,7 @@ define(function (require) {
 		customActivity = await fetch('./accounts.json')
             .then(response => {
                 console.log(response);
-                console.log('Version', 7);
+                console.log('Version', 8);
                 if(!response.ok)
                     throw new Error('Reponse not ok'); 
                 
@@ -166,8 +166,49 @@ define(function (require) {
         return isValid;
     }
     function initialize(data) {
-      
-       
+        loadCustomActivity()
+            .then(()  => {
+                if (data) {
+                    payload = data;
+                }
+                var hasInArguments = Boolean(
+                    payload["arguments"] &&            
+                    payload["arguments"].execute &&            
+                    payload["arguments"].execute.inArguments &&            
+                    payload["arguments"].execute.inArguments.length > 0);
+                var inArguments = hasInArguments ? payload["arguments"].execute.inArguments[0]
+                    : {};
+                if (!hasInArguments) {
+                    payload.arguments = {};
+                    payload.arguments.execute = {};
+                    payload.arguments.execute.inArguments = [];
+                }
+                brand = inArguments.brand;
+                whatsappAccount = inArguments.whatsappAccount;
+                templateName = inArguments.templateName;
+                phoneFieldName = inArguments.phoneFieldName;
+                templateVariables = inArguments.templateVariablesField;
+                extraVariables = inArguments.extraVariablesField;
+                botRedirect = inArguments.botRedirect;
+                botRedirectBlock = inArguments.botRedirectBlock;
+                masterState = inArguments.masterState;
+                if (brand && whatsappAccount && templateName && phoneFieldName && templateVariables && botRedirect && botRedirectBlock && masterState) {
+                    $("#brand").val(brand);
+                    $("#brand").trigger('change');
+                    $("#whatsappAccount").val(whatsappAccount);
+                    $("#templateName").val(templateName);
+                    $("#phoneFieldName").val(phoneFieldName);
+                    $("#templateVariables").val(templateVariables);
+                    $("#extraVariables").val(extraVariables);
+                    $("#botRedirect").val(botRedirect);
+                    $("#botRedirectBlock").val(botRedirectBlock);
+                    $("#masterState").val(masterState);
+                    $("#btnEnable").hide();
+                    $("#btnDisable").show();
+                }
+
+                loading(false);
+            });
     }
 
     function onRender() {
@@ -212,49 +253,7 @@ define(function (require) {
             $("#btnEnable").attr("disabled", true);
             $('#btnEnable').addClass("disabled");
         });
-        loadCustomActivity()
-            .then(()  => {
-                if (data) {
-                    payload = data;
-                }
-                var hasInArguments = Boolean(
-                    payload["arguments"] &&            
-                    payload["arguments"].execute &&            
-                    payload["arguments"].execute.inArguments &&            
-                    payload["arguments"].execute.inArguments.length > 0);
-                var inArguments = hasInArguments ? payload["arguments"].execute.inArguments[0]
-                    : {};
-                if (!hasInArguments) {
-                    payload.arguments = {};
-                    payload.arguments.execute = {};
-                    payload.arguments.execute.inArguments = [];
-                }
-                brand = inArguments.brand;
-                whatsappAccount = inArguments.whatsappAccount;
-                templateName = inArguments.templateName;
-                phoneFieldName = inArguments.phoneFieldName;
-                templateVariables = inArguments.templateVariablesField;
-                extraVariables = inArguments.extraVariablesField;
-                botRedirect = inArguments.botRedirect;
-                botRedirectBlock = inArguments.botRedirectBlock;
-                masterState = inArguments.masterState;
-                if (brand && whatsappAccount && templateName && phoneFieldName && templateVariables && botRedirect && botRedirectBlock && masterState) {
-                    $("#brand").val(brand);
-                    $("#brand").trigger('change');
-                    $("#whatsappAccount").val(whatsappAccount);
-                    $("#templateName").val(templateName);
-                    $("#phoneFieldName").val(phoneFieldName);
-                    $("#templateVariables").val(templateVariables);
-                    $("#extraVariables").val(extraVariables);
-                    $("#botRedirect").val(botRedirect);
-                    $("#botRedirectBlock").val(botRedirectBlock);
-                    $("#masterState").val(masterState);
-                    $("#btnEnable").hide();
-                    $("#btnDisable").show();
-                }
-
-                loading(false);
-            });
+      
 
         lockForm();
     }
