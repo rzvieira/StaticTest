@@ -133,6 +133,8 @@ define(function (require) {
     function brandChange(evt) {
         let value = $(evt.currentTarget).val();
 
+        console.log('value',value);
+
         loadAccountSelector(value);
 
         lockForm();
