@@ -29,7 +29,7 @@ define(function (require) {
 		customActivity = await fetch('./accounts.json')
             .then(response => {
                 console.log(response);
-                console.log('Version', 8);
+                console.log('Version', 9);
                 if(!response.ok)
                     throw new Error('Reponse not ok'); 
                 
