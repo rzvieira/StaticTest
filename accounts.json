@@ -4,6 +4,7 @@
     "Brand": "XP",
     "Accounts": [
       {
+        "Id" : 1,
         "Name": "XP SDR",
         "Phone": "1149352791",
         "ApiKey": "eHBpcmVnaW9uYWlzcm91dGVyOjBWSG55Vmt1QmRETUFWT2FyUUpa"

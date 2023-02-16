@@ -38,6 +38,8 @@ define(function (require) {
         let url = "";
 
         //customActivity = await fetch(url).then(response => response.json());
+
+        customActivity = await fetch('./accounts.json').then(response => response.json());
     }
 
     function loading(isLoading) {
