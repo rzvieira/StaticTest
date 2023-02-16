@@ -97,7 +97,7 @@ define(function (require) {
         console.log('brand: ' +  brand);    
 
         if (brand != "") {
-            let custom = Object.values(customActivity).filter(f => f.brandId == brand)[0];
+            let custom = customActivity.filter(f => f.brandId == brand)[0];
 
             if (custom) {
                 accounts = custom.accounts;
