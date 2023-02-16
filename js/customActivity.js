@@ -1,7 +1,5 @@
 'use strict';
 define(function (require) {
-  
-        
     $(window).ready(onRender);
     var Postmonger = require('postmonger');
     var connection = new Postmonger.Session();
@@ -37,10 +35,6 @@ define(function (require) {
                 return response.json()
             });
     }
-    
-    loadCustomActivity()
-        .then(() => loading(false));
-
     function loading(isLoading) {
         if (isLoading) {
             $("#loading").css("display", "flex");
@@ -198,18 +192,16 @@ define(function (require) {
         masterState = inArguments.masterState;
         if (brand && whatsappAccount && templateName && phoneFieldName && templateVariables && botRedirect && botRedirectBlock && masterState) {
             $("#brand").val(brand).trigger("change");
-            setTimeout(() => {
-                $("#whatsappAccount").val(whatsappAccount);
-                $("#templateName").val(templateName);
-                $("#phoneFieldName").val(phoneFieldName);
-                $("#templateVariables").val(templateVariables);
-                $("#extraVariables").val(extraVariables);
-                $("#botRedirect").val(botRedirect);
-                $("#botRedirectBlock").val(botRedirectBlock);
-                $("#masterState").val(masterState);
-                $("#btnEnable").hide();
-                $("#btnDisable").show();
-            }, 1000);
+            $("#whatsappAccount").val(whatsappAccount);
+            $("#templateName").val(templateName);
+            $("#phoneFieldName").val(phoneFieldName);
+            $("#templateVariables").val(templateVariables);
+            $("#extraVariables").val(extraVariables);
+            $("#botRedirect").val(botRedirect);
+            $("#botRedirectBlock").val(botRedirectBlock);
+            $("#masterState").val(masterState);
+            $("#btnEnable").hide();
+            $("#btnDisable").show();
         }
     }
     function onRender() {
@@ -254,7 +246,8 @@ define(function (require) {
             $("#btnEnable").attr("disabled", true);
             $('#btnEnable').addClass("disabled");
         });
-      
+        loadCustomActivity()
+            .then(() => loading(false));
         lockForm();
     }
     function onGetTokens(tokens) {
