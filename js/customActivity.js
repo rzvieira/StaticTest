@@ -1,5 +1,7 @@
 'use strict';
 define(function (require) {
+  
+        
     $(window).ready(onRender);
     var Postmonger = require('postmonger');
     var connection = new Postmonger.Session();
@@ -35,6 +37,10 @@ define(function (require) {
                 return response.json()
             });
     }
+    
+    loadCustomActivity()
+        .then(() => loading(false));
+
     function loading(isLoading) {
         if (isLoading) {
             $("#loading").css("display", "flex");
@@ -248,8 +254,7 @@ define(function (require) {
             $("#btnEnable").attr("disabled", true);
             $('#btnEnable').addClass("disabled");
         });
-        loadCustomActivity()
-            .then(() => loading(false));
+      
         lockForm();
     }
     function onGetTokens(tokens) {
