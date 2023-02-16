@@ -87,6 +87,8 @@ define(function (require) {
                 text: "Conta de envio"
             }));
 
+        console.log('brand: ' +  brand);    
+
         if (brand != "") {
             let custom = customActivity.filter(f => f.brandId == brand)[0];
 
