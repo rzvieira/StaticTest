@@ -31,7 +31,7 @@ define(function (require) {
     var botRedirectBlock = '';
     var masterState = '';
 
-    async function loadCustomActivity() {
+    function loadCustomActivity() {
         loading(true);
 
         // let url = "/api/V1/WhatsappCustomActivity/get-custom-activity";
