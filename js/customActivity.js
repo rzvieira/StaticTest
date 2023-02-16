@@ -29,7 +29,7 @@ define(function (require) {
 		customActivity = await fetch('./accounts.json')
             .then(response => {
                 console.log(response);
-                console.log('Version', 3);
+                console.log('Version', 4);
                 if(!response.ok)
                     throw new Error('Reponse not ok'); 
                 
@@ -186,10 +186,8 @@ define(function (require) {
         whatsappAccount = inArguments.whatsappAccount;
         templateName = inArguments.templateName;
         phoneFieldName = inArguments.phoneFieldName;
-        templateVariables = inArguments.templateVariables;
-        templateVariablesField = inArguments.templateVariablesField;
-        extraVariables = inArguments.extraVariables;
-        extraVariablesField = inArguments.extraVariablesField;
+        templateVariables = inArguments.templateVariablesField;
+        extraVariables = inArguments.extraVariablesField;
         botRedirect = inArguments.botRedirect;
         botRedirectBlock = inArguments.botRedirectBlock;
         masterState = inArguments.masterState;
