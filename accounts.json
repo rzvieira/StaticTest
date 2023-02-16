@@ -1,11 +1,11 @@
 [
   {
-    "BrandId": 3,
-    "Brand": "XP",
-    "Accounts": [
+    "brandId": 3,
+    "brand": "XP",
+    "accounts": [
       {
-        "Id" : 1,
-        "Name": "TakeBlip"
+        "id" : 1,
+        "name": "TakeBlip"
       }
     ]
   }
