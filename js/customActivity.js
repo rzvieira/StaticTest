@@ -29,7 +29,7 @@ define(function (require) {
 		customActivity = await fetch('./accounts.json')
             .then(response => {
                 console.log(response);
-                console.log('Version', 4);
+                console.log('Version', 5);
                 if(!response.ok)
                     throw new Error('Reponse not ok'); 
                 
@@ -193,6 +193,7 @@ define(function (require) {
         masterState = inArguments.masterState;
         if (brand && whatsappAccount && templateName && phoneFieldName && templateVariables && botRedirect && botRedirectBlock && masterState) {
             $("#brand").val(brand);
+            $("#brand").trigger('change');
             $("#whatsappAccount").val(whatsappAccount);
             $("#templateName").val(templateName);
             $("#phoneFieldName").val(phoneFieldName);
