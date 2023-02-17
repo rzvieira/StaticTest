@@ -24,7 +24,6 @@
       "verb": "POST",
       "format": "json",
       "useJwt": true,
-      "customerKey" : "fb5e3319-91a6-4c72-b520-001a519b5cdd",
       "timeout": 10000
     }
   },
@@ -32,26 +31,22 @@
     "save": {
       "url": "https://eoj6qq4ujbb04fk.m.pipedream.net/save?apiKey=teste",
       "verb": "POST",
-      "useJwt": true,
-      "customerKey" : "fb5e3319-91a6-4c72-b520-001a519b5cdd",
+      "useJwt": true
     },
     "publish": {
       "url": "https://eoj6qq4ujbb04fk.m.pipedream.net/publish?apiKey=teste",
       "verb": "POST",
-      "useJwt": true,
-      "customerKey" : "fb5e3319-91a6-4c72-b520-001a519b5cdd",
+      "useJwt": true
     },
     "validate": {
       "url": "https://eoj6qq4ujbb04fk.m.pipedream.net/validate?apiKey=teste",
       "verb": "POST",
-      "useJwt": true,
-      "customerKey" : "fb5e3319-91a6-4c72-b520-001a519b5cdd",
+      "useJwt": true
     },
     "stop": {
       "url": "https://eoj6qq4ujbb04fk.m.pipedream.net/stop?apiKey=teste",
       "verb": "POST",
-      "useJwt": true,
-      "customerKey" : "fb5e3319-91a6-4c72-b520-001a519b5cdd",
+      "useJwt": true
     }
   },
   "wizardSteps": [
