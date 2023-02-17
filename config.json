@@ -24,7 +24,7 @@
       "verb": "POST",
       "format": "json",
       "useJwt": true,
-      "customerKey": "fb5e3319-91a6-4c72-b520-001a519b5cdd",
+      "customerKey": "d9780132-b6ef-4cfd-a01a-0c71c7e0da29",
       "timeout": 10000
     }
   },
@@ -33,25 +33,25 @@
       "url": "https://eoj6qq4ujbb04fk.m.pipedream.net/save?apiKey=teste",
       "verb": "POST",
       "useJwt": true,
-      "customerKey": "fb5e3319-91a6-4c72-b520-001a519b5cdd"
+      "customerKey": "d9780132-b6ef-4cfd-a01a-0c71c7e0da29"
     },
     "publish": {
       "url": "https://eoj6qq4ujbb04fk.m.pipedream.net/publish?apiKey=teste",
       "verb": "POST",
       "useJwt": true,
-      "customerKey": "fb5e3319-91a6-4c72-b520-001a519b5cdd"
+      "customerKey": "d9780132-b6ef-4cfd-a01a-0c71c7e0da29"
     },
     "validate": {
       "url": "https://eoj6qq4ujbb04fk.m.pipedream.net/validate?apiKey=teste",
       "verb": "POST",
       "useJwt": true,
-      "customerKey": "fb5e3319-91a6-4c72-b520-001a519b5cdd"
+      "customerKey": "d9780132-b6ef-4cfd-a01a-0c71c7e0da29"
     },
     "stop": {
       "url": "https://eoj6qq4ujbb04fk.m.pipedream.net/stop?apiKey=teste",
       "verb": "POST",
       "useJwt": true,
-      "customerKey": "fb5e3319-91a6-4c72-b520-001a519b5cdd"
+      "customerKey": "d9780132-b6ef-4cfd-a01a-0c71c7e0da29"
     }
   },
   "wizardSteps": [
